@@ -58,9 +58,17 @@ struct HomeView: View {
                 }
                 ScrollView(.horizontal , showsIndicators: false){
                     HStack(spacing:10){
-                        Category()
-                        Category()
-                        Category()
+                        Category(categoryTitle: "Design",
+                        categoryDes: "Graphic Design and More",
+                        categoryImg: "design")
+                        Category(categoryTitle: "Design",
+                        categoryDes: "Graphic Design and More",
+                        categoryImg: "design")
+                        Category(categoryTitle: "Design",
+                        categoryDes: "Graphic Design and More",
+                        categoryImg: "design")
+                        
+                       
                         
                     }
                 }
@@ -79,10 +87,11 @@ struct HomeView: View {
                 }
                 ScrollView(.horizontal , showsIndicators: false){
                     HStack(spacing:10){
-                        Recomended()
-                        Recomended()
-                        Recomended()
-                        
+                        Recomended(recTitle: "IETS Preapaetion", recDes: "njnbi iiknhohn ijo")
+
+                       
+                            Recomended(recTitle: "IETS Preapaetion", recDes: "njnbi iiknhohn ijo")
+
                     }
                 }
                     
@@ -117,11 +126,35 @@ extension View {
 }
 
 struct Category : View {
+    @State var categoryTitle : String
+    @State var categoryDes : String
+    @State var categoryImg : String
+
     var body: some View{
         VStack{
             
+            Image("\(categoryImg)")
+                .resizable()
+            HStack{
+                VStack(alignment: .leading){
+                    Text("\(categoryTitle)")
+                        .padding(.horizontal)
+                        .font(.system(size: 24))
+                        .fontWeight(.semibold)
+                    Text("\(categoryDes)")
+                        .padding(.horizontal)
+                        .padding(.bottom,10)
+                        .font(.system(size: 14))
+                        .lineLimit(1)
+
+                }
+               
+                Spacer()
+            }
+                           
+            
         }
-        .frame(width: UIScreen.main.bounds.width * 0.5 - 20, height: 150)
+        .frame(width: UIScreen.main.bounds.width * 0.5 - 20, height: 170)
         .background(Color.white)
         .cornerRadius(20)
     }
@@ -129,12 +162,35 @@ struct Category : View {
 
 
 struct Recomended : View {
+    
+    @State var recTitle : String
+    @State var recDes : String
+   
     var body: some View{
         VStack{
-            
+            HStack{
+                VStack(alignment: .leading){
+                    Text("\(recTitle)")
+                        .padding(.horizontal)
+                        .font(.system(size: 24))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                    Text("\(recDes)")
+                        .padding(.horizontal)
+                        .padding(.bottom,10)
+                        .font(.system(size: 14))
+                        .lineLimit(1)
+                        .foregroundColor(.gray)
+                    
+                }
+                Spacer()
+
+            }
+               
+
         }
         .frame(width: UIScreen.main.bounds.width * 0.9 - 20, height: 150)
-        .background(Color.white)
+        .background(Color("BlackCard"))
         .cornerRadius(20)
     }
 }
