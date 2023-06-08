@@ -107,16 +107,9 @@ struct CourseDetailView: View {
             }
             .padding(.top)
 
-            VStack(){
-                ScrollView(.vertical,showsIndicators: false){
-                    Lesson()
-                    Lesson()
-                    Lesson()
-                    Lesson()
-                }
+           
 
-            }
-
+            Test()
             Spacer()
                 
         }
@@ -172,3 +165,55 @@ struct Lesson : View {
         .padding(.bottom,5)
     }
 }
+
+struct Test: View {
+    @State private var selectedTab = 0
+
+        var body: some View {
+            VStack {
+                
+                TabView(selection: $selectedTab) {
+                    VStack{
+                        ScrollView{
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                        }
+                    }
+                        .tabItem {
+                            Label("Tab 1", systemImage: "1.circle")
+                        }
+                        .tag(0)
+                    
+                    VStack{
+                        ScrollView{
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                        }
+                    }
+                        .tabItem {
+                            Label("Tab 2", systemImage: "2.circle")
+                        }
+                        .tag(1)
+                    
+                  
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .gesture(
+                    DragGesture()
+                        .onEnded { value in
+                            if value.translation.width < 0 {
+                                selectedTab = min(selectedTab + 1, 2)
+                            } else if value.translation.width > 0 {
+                                selectedTab = max(selectedTab - 1, 0)
+                            }
+                        }
+                )
+            }
+           
+                    
+        }
+    }

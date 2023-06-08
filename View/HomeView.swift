@@ -150,7 +150,7 @@ struct Category : View {
                 VStack(alignment: .leading){
                     Text("\(categoryTitle)")
                         .padding(.horizontal)
-                        .font(.system(size: 24))
+                        .font(.system(size: 22))
                         .fontWeight(.semibold)
                     Text("\(categoryDes)")
                         .padding(.horizontal)
