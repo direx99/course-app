@@ -15,12 +15,17 @@ struct HomeView: View {
         VStack{
             VStack{
                 HStack{
+                    Image("Menu")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30)
                     Spacer()
                     Image(systemName: "person.circle.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 40)
+                        .frame(width: 30)
                 }
+                .padding(.bottom,40)
             }
             HStack{
                 VStack(alignment:.leading){
@@ -45,7 +50,7 @@ struct HomeView: View {
                 
                    
             }
-            
+        
             VStack{
                 HStack(alignment:.bottom){
                     Text("Categories")
@@ -74,7 +79,7 @@ struct HomeView: View {
                 }
                     
             }
-            .padding(.top)
+            .padding(.top,30)
             VStack{
                 HStack(alignment:.bottom){
                     Text("Recomended")
@@ -96,7 +101,7 @@ struct HomeView: View {
                 }
                     
             }
-            .padding(.top)
+            .padding(.top,30)
             
             Spacer()
            
@@ -154,7 +159,7 @@ struct Category : View {
                            
             
         }
-        .frame(width: UIScreen.main.bounds.width * 0.5 - 20, height: 170)
+        .frame(width: UIScreen.main.bounds.width * 0.5 - 20, height: 180)
         .background(Color.white)
         .cornerRadius(20)
     }
@@ -171,26 +176,43 @@ struct Recomended : View {
             HStack{
                 VStack(alignment: .leading){
                     Text("\(recTitle)")
-                        .padding(.horizontal)
                         .font(.system(size: 24))
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                     Text("\(recDes)")
-                        .padding(.horizontal)
                         .padding(.bottom,10)
                         .font(.system(size: 14))
                         .lineLimit(1)
                         .foregroundColor(.gray)
+                    HStack(spacing:0){
+                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill")
+                        Text("4.9")
+                            .foregroundColor(.white)
+                            .padding(.leading)
+                        Spacer()
+                        Text("Get Course")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 14))
+
+
+                    }
+                        .foregroundColor(.orange)
                     
                 }
+                .padding(.horizontal)
                 Spacer()
 
             }
                
 
         }
-        .frame(width: UIScreen.main.bounds.width * 0.9 - 20, height: 150)
+        .frame(width: UIScreen.main.bounds.width * 0.9 - 20, height: 130)
         .background(Color("BlackCard"))
         .cornerRadius(20)
     }
 }
+
