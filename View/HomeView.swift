@@ -12,104 +12,110 @@ struct HomeView: View {
     @State var searchText : String = ""
 
     var body: some View {
-        VStack{
+        NavigationStack{
             VStack{
+                VStack{
+                    HStack{
+                        Image("Menu")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30)
+                        Spacer()
+                        Image(systemName: "person.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30)
+                    }
+                    .padding(.bottom,40)
+                }
                 HStack{
-                    Image("Menu")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30)
+                    VStack(alignment:.leading){
+                        Text("Welcome back")
+                            .font(.system(size: 24))
+                        Text("Dinith")
+                            .font(.system(size: 35))
+                            .fontWeight(.semibold)
+                            .padding(.top,-20)
+                    }
                     Spacer()
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30)
                 }
-                .padding(.bottom,40)
-            }
-            HStack{
-                VStack(alignment:.leading){
-                    Text("Welcome back")
-                        .font(.system(size: 24))
-                    Text("Dinith")
-                        .font(.system(size: 35))
-                        .fontWeight(.semibold)
-                        .padding(.top,-20)
-                }
-                Spacer()
-            }
-            
-            HStack{
-                TextField("Search your job here", text: $searchText)
-                    .leadingImage(systemName: "magnifyingglass")
-                    .padding()
-                    .background(Color.white)
-                    .font(.system(size: 15).bold())
-                    .cornerRadius(130)
-                    
                 
-                   
-            }
-        
-            VStack{
-                HStack(alignment:.bottom){
-                    Text("Categories")
-                        .font(.system(size: 20))
-                        .fontWeight(.semibold)
-                    Spacer()
-                    Text("See all")
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
-                }
-                ScrollView(.horizontal , showsIndicators: false){
-                    HStack(spacing:10){
-                        Category(categoryTitle: "Design",
-                        categoryDes: "Graphic Design and More",
-                        categoryImg: "design")
-                        Category(categoryTitle: "Design",
-                        categoryDes: "Graphic Design and More",
-                        categoryImg: "design")
-                        Category(categoryTitle: "Design",
-                        categoryDes: "Graphic Design and More",
-                        categoryImg: "design")
-                        
-                       
-                        
-                    }
-                }
+                HStack{
+                    TextField("Search your job here", text: $searchText)
+                        .leadingImage(systemName: "magnifyingglass")
+                        .padding()
+                        .background(Color.white)
+                        .font(.system(size: 15).bold())
+                        .cornerRadius(130)
                     
-            }
-            .padding(.top,30)
-            VStack{
-                HStack(alignment:.bottom){
-                    Text("Recomended")
-                        .font(.system(size: 20))
-                        .fontWeight(.semibold)
-                    Spacer()
-                    Text("See all")
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
+                    
+                    
                 }
-                ScrollView(.horizontal , showsIndicators: false){
-                    HStack(spacing:10){
-                        Recomended(recTitle: "IETS Preapaetion", recDes: "njnbi iiknhohn ijo")
-
-                       
+                
+                VStack{
+                    HStack(alignment:.bottom){
+                        Text("Categories")
+                            .font(.system(size: 20))
+                            .fontWeight(.semibold)
+                        Spacer()
+                        Text("See all")
+                            .font(.system(size: 12))
+                            .foregroundColor(.gray)
+                    }
+                    ScrollView(.horizontal , showsIndicators: false){
+                        HStack(spacing:10){
+                            Category(categoryTitle: "Design",
+                                     categoryDes: "Graphic Design and More",
+                                     categoryImg: "design")
+                            Category(categoryTitle: "Design",
+                                     categoryDes: "Graphic Design and More",
+                                     categoryImg: "design")
+                            Category(categoryTitle: "Design",
+                                     categoryDes: "Graphic Design and More",
+                                     categoryImg: "design")
+                            
+                            
+                            
+                        }
+                    }
+                    
+                }
+                .padding(.top,30)
+                VStack{
+                    HStack(alignment:.bottom){
+                        Text("Recomended")
+                            .font(.system(size: 20))
+                            .fontWeight(.semibold)
+                        Spacer()
+                        Text("See all")
+                            .font(.system(size: 12))
+                            .foregroundColor(.gray)
+                    }
+                    ScrollView(.horizontal , showsIndicators: false){
+                        HStack(spacing:10){
+                            NavigationLink(destination: CourseDetailView()) {
+                                Recomended(recTitle: "IETS Preapaetion", recDes: "njnbi iiknhohn ijo")
+                            }
+                            
+                            
                             Recomended(recTitle: "IETS Preapaetion", recDes: "njnbi iiknhohn ijo")
-
+                            
+                        }
                     }
-                }
                     
+                }
+                .padding(.top,30)
+                
+                Spacer()
+                
             }
-            .padding(.top,30)
-            
-            Spacer()
-           
+            .padding()
+            .background(Color("AppGray"))
+
         }
-        .padding()
-        .background(Color("AppGray"))
 
     }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
