@@ -16,139 +16,159 @@ struct CourseDetailView: View {
         UIApplication.shared.statusBarStyle = .darkContent
         }
     var body: some View {
-        VStack{
-            ScrollView{
-                
-                VStack{
-                    HStack{
-                        VStack(alignment: .leading){
-                            Text("React - The Complete ")
-                                .font(.system(size: 32))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                            Text("Guid")
-                                .font(.system(size: 32))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .padding(.bottom,1)
-                            
-                            Text("Developement")
-                                .font(.system(size: 20))
-                                .foregroundColor(.gray)
-                            
-                            HStack(spacing:0){
-                                Group{
-                                    Image(systemName: "star.fill")
-                                    Image(systemName: "star.fill")
-                                    Image(systemName: "star.fill")
-                                    Image(systemName: "star.fill")
-                                    Image(systemName: "star.fill")
+        NavigationStack{
+            
+            VStack{
+                HStack{
+                    NavigationLink(destination: HomeView()) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.white)
+                            .font(.system(size: 25))
+                                    }
+                    
+                    Spacer()
+                    Image("user")
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(10)
+                        .frame(height: 30)
+                                
+                    
+                }
+                .padding(.horizontal)
+                ScrollView{
+                    
+                    VStack{
+                        HStack{
+                            VStack(alignment: .leading){
+                                Text("React - The Complete ")
+                                    .font(.system(size: 32))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                Text("Guid")
+                                    .font(.system(size: 32))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .padding(.bottom,1)
+                                
+                                Text("Developement")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.gray)
+                                
+                                HStack(spacing:0){
+                                    Group{
+                                        Image(systemName: "star.fill")
+                                        Image(systemName: "star.fill")
+                                        Image(systemName: "star.fill")
+                                        Image(systemName: "star.fill")
+                                        Image(systemName: "star.fill")
+                                    }
+                                    .font(.system(size: 12))
+                                    
+                                    Text("5")
+                                        .foregroundColor(.white)
+                                        .padding(.leading,5)
+                                        .font(.system(size: 12))
+                                    Spacer()
+                                    Image(systemName: "person.2.fill")
+                                    Text("23 234")
+                                        .foregroundColor(.white)
+                                        .padding(.leading,5)
+                                        .font(.system(size: 12))
+                                    Spacer()
+                                    Image(systemName: "clock.fill")
+                                    Text("12 Hrs")
+                                        .foregroundColor(.white)
+                                        .padding(.leading,5)
+                                        .font(.system(size: 12))
+                                    
+                                    
                                 }
-                                .font(.system(size: 12))
-                                
-                                Text("5")
+                                .foregroundColor(.orange)
+                                .padding(.top,10)
+                            }
+                            
+                            
+                            
+                            Spacer()
+                        }
+                        HStack(){
+                            Text("$19.99")
+                                .foregroundColor(.white)
+                                .font(.system(size: 35))
+                                .fontWeight(.semibold)
+                                .padding(.top,20)
+                            
+                            Spacer()
+                            
+                        }
+                        HStack(){
+                            VStack(alignment:.leading){
+                                Text("About Course")
                                     .foregroundColor(.white)
-                                    .padding(.leading,5)
-                                    .font(.system(size: 12))
-                                Spacer()
-                                Image(systemName: "person.2.fill")
-                                Text("23 234")
+                                    .font(.system(size: 18))
+                                    .padding(.top,10)
+                                    .padding(.bottom,2)
+                                Text("The React. JS Course Curriculum contains basic elements like introduction, JSX overview, Environmental setup, real-time applications, forms and UI, Component Lifecycle, Event Handling.")
                                     .foregroundColor(.white)
-                                    .padding(.leading,5)
                                     .font(.system(size: 12))
-                                Spacer()
-                                Image(systemName: "person.2.fill")
-                                Text("23 234")
-                                    .foregroundColor(.white)
-                                    .padding(.leading,5)
-                                    .font(.system(size: 12))
-                                
+                                    .opacity(0.8)
                                 
                             }
-                            .foregroundColor(.orange)
-                            .padding(.top,10)
-                        }
-                        
-                        
-                        
-                        Spacer()
-                    }
-                    HStack(){
-                        Text("$19.99")
-                            .foregroundColor(.white)
-                            .font(.system(size: 35))
-                            .fontWeight(.semibold)
-                            .padding(.top,20)
-                        
-                        Spacer()
-                        
-                    }
-                    HStack(){
-                        VStack(alignment:.leading){
-                            Text("About Course")
-                                .foregroundColor(.white)
-                                .font(.system(size: 18))
-                                .padding(.top,10)
-                                .padding(.bottom,2)
-                            Text("The React. JS Course Curriculum contains basic elements like introduction, JSX overview, Environmental setup, real-time applications, forms and UI, Component Lifecycle, Event Handling.")
-                                .foregroundColor(.white)
-                                .font(.system(size: 12))
-                                .opacity(0.8)
+                            
+                            
+                            
+                            Spacer()
                             
                         }
                         
                         
                         
-                        Spacer()
+                        
+                        
+                        Test()
+                            .padding(.top,-50)
+                        
+                        
                         
                     }
+                    .padding()
+                    .padding(.top,20)
+                    .frame(maxWidth: .infinity,maxHeight: .infinity)
+                    .background(Color("BlackCard"))
+                    .padding(.bottom,-25)
                     
-                    
-                   
-                    
-                    
-                    Test()
-                        .padding(.top,-50)
-                    
+                }
+                
+                .navigationBarTitleDisplayMode(.inline)
+                .background(Color("BlackCard"))
+                .navigationBarHidden(true)
+                .ignoresSafeArea()
+                
+                .navigationViewStyle(StackNavigationViewStyle())
+                VStack{
+                    Text("Buy now")
+                        .font(.system(size: 20))
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .frame(width: UIScreen.main.bounds.width * 1 - 50, height: 60)
+                        .opacity(0.9)
                     
                     
                 }
-                .padding()
-                .padding(.top,40)
-                .frame(maxWidth: .infinity,maxHeight: .infinity)
-                .background(Color("BlackCard"))
-                .padding(.bottom,-25)
+                .background(Color("Orange"))
+                .cornerRadius(32)
                 
             }
             
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(.top)
             .background(Color("BlackCard"))
-            .navigationBarHidden(true)
-            .ignoresSafeArea()
             
-            .navigationViewStyle(StackNavigationViewStyle())
-            VStack{
-              Text("Buy now")
-                    .font(.system(size: 20))
-                    .foregroundColor(.white)
-                    .fontWeight(.semibold)
-                    .frame(width: UIScreen.main.bounds.width * 1 - 50, height: 60)
-                    .opacity(0.9)
-
-                
-            }
-            .background(Color("Orange"))
-            .cornerRadius(32)
+            
+            
+            
             
         }
-        
-        .padding(.top)
-        .background(Color("BlackCard"))
-       
-        
-        
-
-        
     }
     
     
