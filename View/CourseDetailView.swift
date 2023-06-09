@@ -9,115 +9,110 @@ import SwiftUI
 
 struct CourseDetailView: View {
     var body: some View {
+        ScrollView{
+
         VStack{
-            HStack{
-                VStack(alignment: .leading){
-                    Text("React - The Complete ")
-                        .font(.system(size: 32))
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                    Text("Guid")
-                        .font(.system(size: 32))
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding(.bottom,1)
-
-                    Text("Developement")
-                        .font(.system(size: 20))
-                        .foregroundColor(.gray)
-
-                    HStack(spacing:0){
-                        Group{
-                            Image(systemName: "star.fill")
-                            Image(systemName: "star.fill")
-                            Image(systemName: "star.fill")
-                            Image(systemName: "star.fill")
-                            Image(systemName: "star.fill")
+                HStack{
+                    VStack(alignment: .leading){
+                        Text("React - The Complete ")
+                            .font(.system(size: 32))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                        Text("Guid")
+                            .font(.system(size: 32))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(.bottom,1)
+                        
+                        Text("Developement")
+                            .font(.system(size: 20))
+                            .foregroundColor(.gray)
+                        
+                        HStack(spacing:0){
+                            Group{
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                            }
+                            .font(.system(size: 12))
+                            
+                            Text("5")
+                                .foregroundColor(.white)
+                                .padding(.leading,5)
+                                .font(.system(size: 12))
+                            Spacer()
+                            Image(systemName: "person.2.fill")
+                            Text("23 234")
+                                .foregroundColor(.white)
+                                .padding(.leading,5)
+                                .font(.system(size: 12))
+                            Spacer()
+                            Image(systemName: "person.2.fill")
+                            Text("23 234")
+                                .foregroundColor(.white)
+                                .padding(.leading,5)
+                                .font(.system(size: 12))
+                            
+                            
                         }
-                        .font(.system(size: 12))
-
-                        Text("5")
-                            .foregroundColor(.white)
-                            .padding(.leading,5)
-                            .font(.system(size: 12))
-                        Spacer()
-                        Image(systemName: "person.2.fill")
-                        Text("23 234")
-                            .foregroundColor(.white)
-                            .padding(.leading,5)
-                            .font(.system(size: 12))
-                        Spacer()
-                        Image(systemName: "person.2.fill")
-                        Text("23 234")
-                            .foregroundColor(.white)
-                            .padding(.leading,5)
-                            .font(.system(size: 12))
-
-
-                    }
                         .foregroundColor(.orange)
                         .padding(.top,10)
+                    }
+                    
+                    
+                    
+                    Spacer()
                 }
+                HStack(){
+                    Text("$19.99")
+                        .foregroundColor(.white)
+                        .font(.system(size: 35))
+                        .fontWeight(.semibold)
+                        .padding(.top,20)
+                    
+                    Spacer()
+                    
+                }
+                HStack(){
+                    VStack(alignment:.leading){
+                        Text("About Course")
+                            .foregroundColor(.white)
+                            .font(.system(size: 18))
+                            .padding(.top,10)
+                            .padding(.bottom,2)
+                        Text("The React. JS Course Curriculum contains basic elements like introduction, JSX overview, Environmental setup, real-time applications, forms and UI, Component Lifecycle, Event Handling.")
+                            .foregroundColor(.white)
+                            .font(.system(size: 12))
+                        
+                    }
+                    
+                    
+                    
+                    Spacer()
+                    
+                }
+                
+                
+                
+                
+                
+                    Test()
                 
                
                 
-            Spacer()
             }
-            HStack(){
-                Text("$19.99")
-                    .foregroundColor(.white)
-                .font(.system(size: 35))
-                .fontWeight(.semibold)
-                .padding(.top,20)
-
-                Spacer()
-                
-            }
-            HStack(){
-                VStack(alignment:.leading){
-                    Text("About Course")
-                        .foregroundColor(.white)
-                        .font(.system(size: 18))
-                        .padding(.top,10)
-                        .padding(.bottom,2)
-                    Text("The React. JS Course Curriculum contains basic elements like introduction, JSX overview, Environmental setup, real-time applications, forms and UI, Component Lifecycle, Event Handling.")
-                        .foregroundColor(.white)
-                        .font(.system(size: 12))
-
-                }
-                
-               
-
-                Spacer()
-                
-            }
-            HStack{
-                Text("Lessons")
-                    .foregroundColor(.white)
-                    .font(.system(size: 20))
-                    .padding(.top,20)
-                    .padding(.bottom,10)
-                Text("Reviews")
-                    .foregroundColor(.gray)
-                    .font(.system(size: 20))
-                    .padding(.top,20)
-                    .padding(.bottom,10)
-                    .padding(.leading)
-                Spacer()
-            }
-            .padding(.top)
-
-           
-
-            Test()
-            Spacer()
-                
-        }
         .padding()
-        .padding(.top,40)
+        .padding(.top,20)
         .frame(maxWidth: .infinity,maxHeight: .infinity)
         .background(Color("BlackCard"))
         .padding(.bottom,-25)
+
+                
+        }
+        .background(Color("BlackCard"))
+
 
 
         
@@ -145,24 +140,28 @@ struct Lesson : View {
             .padding(.leading)
             .opacity(0.6)
             VStack(alignment:.leading,spacing: 2){
+                Spacer()
+
                 Text("Getting Started")
                     .foregroundColor(.white)
                     .padding(.leading,10)
                     .font(.system(size: 18))
                     .fontWeight(.semibold)
+
                 Text("13 Miniutes")
                     .foregroundColor(.gray)
                     .padding(.leading,10)
                     .font(.system(size: 13))
-            }
-
-            Spacer()
             
+            
+            Spacer()
+        }
+            Spacer()
+
         }
         .frame(width: UIScreen.main.bounds.width * 1 - 50, height: 80)
         .background(Color("BlueCard"))
         .cornerRadius(25)
-        .padding(.bottom,5)
     }
 }
 
@@ -174,25 +173,65 @@ struct Test: View {
                 
                 TabView(selection: $selectedTab) {
                     VStack{
-                        ScrollView{
-                            Lesson()
-                            Lesson()
-                            Lesson()
-                            Lesson()
+                        HStack{
+                            Text("Lessons")
+                                .foregroundColor(.white)
+                                .font(.system(size: 20))
+                                .padding(.top,20)
+                                .padding(.bottom,10)
+                            Text("Reviews")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 20))
+                                .padding(.top,20)
+                                .padding(.bottom,10)
+                                .padding(.leading)
+                            Spacer()
                         }
+                        .padding(.top)
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                        Lesson()
+                        Lesson()
+                        Lesson()
+                        Lesson()
+                        
                     }
+                   
                         .tabItem {
                             Label("Tab 1", systemImage: "1.circle")
                         }
                         .tag(0)
                     
                     VStack{
-                        ScrollView{
-                            Lesson()
-                            Lesson()
-                            Lesson()
-                            Lesson()
+                        HStack{
+                            Text("Lessons")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 20))
+                                .padding(.top,20)
+                                .padding(.bottom,10)
+                                
+                            Text("Reviews")
+                                .foregroundColor(.white)
+                                .font(.system(size: 20))
+                                .padding(.top,20)
+                                .padding(.bottom,10)
+                                .padding(.leading)
+
+                                
+                            Spacer()
                         }
+                        .padding(.top)
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                            Lesson()
+                        Lesson()
+                        Lesson()
+                        Lesson()
+                        Lesson()
+                        
                     }
                         .tabItem {
                             Label("Tab 2", systemImage: "2.circle")
@@ -212,8 +251,10 @@ struct Test: View {
                             }
                         }
                 )
+                Spacer()
             }
-           
+            .frame( height: UIScreen.main.bounds.width * 2)
+
                     
         }
     }
